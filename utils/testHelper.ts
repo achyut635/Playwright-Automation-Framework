@@ -20,7 +20,7 @@ export const TEST_USERS = {
 export const BASE_URL = 'https://practicesoftwaretesting.com';
 
 export async function takeScreenshotOnFailure(page: Page, testName: string) {
-  const screenshotDir = path.join(process.cwd(), 'screenshots');
+  const screenshotDir = path.resolve('screenshots');
   if (!fs.existsSync(screenshotDir)) {
     fs.mkdirSync(screenshotDir, { recursive: true });
   }

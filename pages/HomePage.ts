@@ -13,6 +13,7 @@ export class HomePage extends BasePage {
   readonly productCards: Locator;
   readonly sortDropdown: Locator;
   readonly paginationContainer: Locator;
+  readonly titleicon: Locator;
 
   constructor(page: Page) {
     super(page);
@@ -27,6 +28,7 @@ export class HomePage extends BasePage {
     this.productCards         = page.locator('[data-test="product"]');
     this.sortDropdown         = page.locator('[data-test="sort"]');
     this.paginationContainer  = page.locator('[data-test="pagination"]');
+    this.titleicon = page.locator('[title="Practice Software Testing - Toolshop"]');
   }
 
   async goto() {

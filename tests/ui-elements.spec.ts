@@ -259,6 +259,12 @@ test.describe('UI Elements Test Suite', () => {
       expect(searchInputVisible || searchBtnVisible || imageCount > 0).toBeTruthy();
     });
 
+    test('check title', async({ homePage }) => {
+    await homePage.titleicon.isVisible();
+    await expect(homePage.titleicon).toBeVisible();
+    await expect(homePage.page).toHaveTitle(/.*Practice Software Testing.*/);
+    });
+
     test('should verify sort dropdown with product display', async ({ homePage }) => {
       const sortVisible = await homePage.sortDropdown.isVisible().catch(() => false);
       if (sortVisible) {
@@ -268,5 +274,7 @@ test.describe('UI Elements Test Suite', () => {
       const count = await productImages.count();
       // Products may or may not be displayed
     });
+    
   });
-});
+  });
+

@@ -9,6 +9,9 @@ test.describe('Login Page', () => {
     await expect(loginPage.page).toHaveURL(/.*login.*/);
   });
 
+  test('should not have wrong page title', async({ loginPage }) => {
+    await expect(loginPage.page).not.toHaveTitle(/.*register.*/)});
+
   test('should display all login form elements', async ({ loginPage }) => {
     await loginPage.assertAllElements();
   });
@@ -83,4 +86,5 @@ test.describe('Login Page', () => {
     await loginPage.passwordInput.fill('testpassword');
     await expect(loginPage.passwordInput).toHaveValue('testpassword');
   });
+  
 });
